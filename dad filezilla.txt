@@ -1,0 +1,4 @@
+Servidor FTP: ftp.webcrea.cl
+user: acceso@inmejorableinversiongastronomica.cl
+pass: ghPO6%YP;YyJ
+Port: 21
