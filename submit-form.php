@@ -9,7 +9,7 @@
 
         // send an email to the site owner with the form data
         $to = 'matias.fontecilla@hotmail.com';
-        $subject = 'New request';
+        $subject = 'Secoyas Inquiry';
         $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
         $headers = "From: $email";
         mail($to, $subject, $body, $headers);
