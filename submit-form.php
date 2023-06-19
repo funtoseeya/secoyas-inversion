@@ -11,10 +11,12 @@
         $to = 'matias.fontecilla@hotmail.com';
         $subject = 'Secoyas Inquiry';
         $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
-        $headers = "From: $email";
+        $headers = "From: info@inmejorableinversiongastronomica.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
         mail($to, $subject, $body, $headers);
 
         // send a response back to the client indicating that the form was submitted successfully
         http_response_code(200);
     }
 ?>
+
