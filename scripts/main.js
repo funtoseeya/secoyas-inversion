@@ -60,4 +60,4 @@ function handleSubmit(event) {
     };
     xhr.send(formData);
   }
-}
+}}
