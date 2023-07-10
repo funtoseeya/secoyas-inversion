@@ -13,7 +13,6 @@ whatsappButton.addEventListener('click', function() {
 
 
 
-//handle and track form submission
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 
@@ -51,8 +50,12 @@ function handleSubmit(event) {
         // show a success message to the user
         alert('¡Gracias por su consulta! Nos pondremos en contacto con usted en breve.');
 
-      // clear the form fields
-      form.reset();
+        // clear the form fields
+        form.reset();
+      } else {
+        // handle the error case
+        alert('Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo más tarde.');
+      }
     };
     xhr.onerror = function () {
       // handle the error case
@@ -60,4 +63,4 @@ function handleSubmit(event) {
     };
     xhr.send(formData);
   }
-}}
+}
