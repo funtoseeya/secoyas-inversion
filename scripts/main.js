@@ -25,8 +25,15 @@ function handleSubmit(event) {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'submit-form.php');
     xhr.onload = function () {
+      // Track the form submission event
+      gtag('event', 'form_submission', {
+        'event_category': 'Form',
+        'event_label': 'Contact Form'
+      });
+
       // show a success message to the user
       alert('¡Gracias por su consulta! Nos pondremos en contacto con usted en breve.');
+
       // clear the form fields
       form.reset();
     };
