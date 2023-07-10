@@ -1,3 +1,19 @@
+//track whatsapp clicks
+// Find the WhatsApp button element
+const whatsappButton = document.querySelector('.btn-wsp');
+
+// Add an event listener for the button click
+whatsappButton.addEventListener('click', function() {
+  // Track the event
+  gtag('event', 'Boton Whatsapp', {
+    'event_category': 'Button',
+    'event_label': 'WhatsApp Button'
+  });
+});
+
+
+
+//handle and track form submission
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 
@@ -26,7 +42,7 @@ function handleSubmit(event) {
     xhr.open('POST', 'submit-form.php');
     xhr.onload = function () {
       // Track the form submission event
-      gtag('event', 'form_submission', {
+      gtag('event', 'form_submit', {
         'event_category': 'Form',
         'event_label': 'Contact Form'
       });
