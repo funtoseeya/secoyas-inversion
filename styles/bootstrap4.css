@@ -2550,14 +2550,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: rgb(0, 123, 255);
-    border-color: #007bff
+    background-color:#428771;
+    border-color: #428771
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc
+    background-color:#356e5b;
+    border-color: #356e5b
 }
 
 .btn-primary.focus, .btn-primary:focus {
@@ -9273,3 +9273,38 @@ align-self: center;
 	z-index: 100;
 }
 
+.metric-column {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .metric-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #428771;
+        }
+        .metric-description {
+            font-size: 14px;
+            color: #333333;
+            margin-bottom: 0;
+        }
+        .google-call-to-action {
+            margin-top: 20px;
+            color:#007bff;
+        }
+
+        .btn-google {
+            color: #fff;
+            background-color:#007bff;
+            border-color: #007bff
+        }
+        
+        .btn-google:hover {
+            color: #fff;
+            background-color: #0270e6;
+            border-color: #0270e6
+        }
