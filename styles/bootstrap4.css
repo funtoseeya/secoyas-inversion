@@ -22,7 +22,7 @@
     --gray: #6c757d;
     --light-grey:#d8d8d8;
     --gray-dark: #343a40;
-    --primary: #007bff;
+    --primary: #428771;
     --secondary: #6c757d;
     --success: #28a745;
     --info: #17a2b8;
@@ -158,14 +158,14 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #428771;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
 a:hover {
-    color: #0056b3;
+    color: #48a185;
     text-decoration: underline
 }
 
