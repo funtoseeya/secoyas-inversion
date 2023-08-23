@@ -9315,3 +9315,8 @@ align-self: center;
         .primary-h5{
             color:#428771;
         }
+
+        .strikethrough-red {
+            text-decoration: line-through;
+            text-decoration-color: red; /* Set the color of the strikethrough line */
+        }
