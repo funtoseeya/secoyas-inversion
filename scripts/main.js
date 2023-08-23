@@ -64,3 +64,14 @@ function handleSubmit(event) {
     xhr.send(formData);
   }
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const floatingLinkContainer = document.querySelector('.floating-link-container');
+  const closeButton = document.querySelector('.close-button');
+
+  closeButton.addEventListener('click', function () {
+      floatingLinkContainer.style.display = 'none';
+  });
+});

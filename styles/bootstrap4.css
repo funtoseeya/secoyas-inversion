@@ -9273,6 +9273,53 @@ align-self: center;
 	z-index: 100;
 }
 
+
+/* Floating Link Styles */
+.floating-link-container.top-right {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 1000;
+}
+.floating-link {
+    background-color: var(--red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+.icon-circle {
+    background-color: white;
+    color:var(--red);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.link-content {
+    flex: 1;
+}
+
+.floating-link-text {
+    margin: 0;
+    font-weight: bold;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
 .metric-column {
             background-color: #ffffff;
             padding: 15px;
@@ -9285,16 +9332,48 @@ align-self: center;
             
         }
         .metric-number {
-            font-size: 32px;
             font-weight: bold;
             margin-bottom: 5px;
             color: #428771;
         }
+        
+        .discount-card {
+            border: 2px solid #ff8c00; /* Orange border for the discount card */
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.5); /* Orange shadow for the discount card */
+            /* You can adjust the colors and shadow settings according to your design */
+        }
+
+        .discounted-price {
+            font-size: 32px;
+            display: block; /* Separate the discounted price onto a new line */
+        }
+        
+        .original-price {
+            font-size: 20px; /* Smaller font size for the original price */
+            color: var(--red); 
+            text-decoration: line-through; /* Add strikethrough to the original price */
+            margin-right: 10px; /* Add some spacing between the original and discounted prices */
+        }
+        
+      
+        
+
+        .discount-percentage {
+            font-size: 18px;
+            color: #333333;
+        }
+        
         .metric-description {
             font-size: 18px;
             color: #333333;
             margin-bottom: 0;
         }
+        
+
+
+
+
+        
         .google-call-to-action {
             margin-top: 20px;
             color:#007bff;
@@ -9319,4 +9398,40 @@ align-self: center;
         .strikethrough-red {
             text-decoration: line-through;
             text-decoration-color: red; /* Set the color of the strikethrough line */
+        }
+        .prominent-banner {
+            background-color: #f74646;
+
+            color: white;
+            font-size: 18px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .prominent-banner h3 {
+            font-size: 28px;
+            margin-top: 5px;
+        }
+        
+        .prominent-banner p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .prominent-banner .chip {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #6c757d; /* Slightly darker shade of your primary color */
+            color: white;
+            border-radius: 20px;
+            transition: background-color 0.2s ease-in-out
+        }
+
+        @media (max-width: 768px) {
+            .prominent-banner {
+                margin-top: 3rem;
+            }
+            .floating-link-container.top-right{
+                top:175px;
+            }
         }
