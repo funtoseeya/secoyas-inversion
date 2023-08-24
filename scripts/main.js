@@ -3,7 +3,7 @@
 const whatsappButton = document.querySelector('.btn-wsp');
 
 // Add an event listener for the button click
-whatsappButton.addEventListener('click', function() {
+whatsappButton.addEventListener('click', function () {
   // Track the event
   gtag('event', 'Boton Whatsapp', {
     'event_category': 'Button',
@@ -70,8 +70,14 @@ function handleSubmit(event) {
 document.addEventListener('DOMContentLoaded', function () {
   const floatingLinkContainer = document.querySelector('.floating-link-container');
   const closeButton = document.querySelector('.close-button');
+  const toast = document.querySelector('.floating-link-toast');
 
   closeButton.addEventListener('click', function () {
-      floatingLinkContainer.style.display = 'none';
+    floatingLinkContainer.style.display = 'none';
   });
+
+  toast.addEventListener('click', function () {
+    floatingLinkContainer.style.display = 'none';
+  });
+
 });
