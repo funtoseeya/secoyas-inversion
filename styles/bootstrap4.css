@@ -9355,6 +9355,19 @@ align-self: center;
             margin-right: 10px; /* Add some spacing between the original and discounted prices */
         }
         
+        .new-price {
+            font-size: 20px;
+            color: var(--primary);
+            display: block; /* Separate the discounted price onto a new line */
+            margin-bottom: 0;
+        }
+
+        .previous-price {
+            font-size: 16px;
+            color: var(--red); 
+            text-decoration: line-through; /* Add strikethrough to the original price */
+            margin-bottom: 0;
+        }
       
         
 
