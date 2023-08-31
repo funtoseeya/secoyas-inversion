@@ -7,8 +7,8 @@
 
         // validate the form data here (e.g. check for empty fields, validate email address format, etc.)
 
-        // send an email to the site owner with the form data
-        $to = 'matias.fontecilla@hotmail.com';
+        // send an email to the site owners with the form data
+        $to = 'matias.fontecilla@hotmail.com, rodriguez.u.carlos@gmail.com,fonte757@gmail.com'; // Both email addresses
         $subject = 'Secoyas Inquiry';
         $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
         $headers = "From: info@inmejorableinversiongastronomica.com\r\n";
@@ -19,4 +19,3 @@
         http_response_code(200);
     }
 ?>
-

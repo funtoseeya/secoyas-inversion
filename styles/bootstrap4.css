@@ -9341,14 +9341,17 @@ align-self: center;
         }
         
         .discount-card {
+            background-color: #f7f7f7;
             border: 2px solid #ff8c00; /* Orange border for the discount card */
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 140, 0, 0.5); /* Orange shadow for the discount card */
             /* You can adjust the colors and shadow settings according to your design */
+
         }
+
 
         .discounted-price {
             font-size: 32px;
-            display: block; /* Separate the discounted price onto a new line */
         }
         
         .original-price {
@@ -9451,4 +9454,6 @@ align-self: center;
                 top:175px;
             }
         }
+        
+
         
