@@ -9456,4 +9456,23 @@ align-self: center;
         }
         
 
-        
+        .hidden {
+            display: none;
+        }
+    
+        #see-more {
+            background-color: transparent;
+            border: none; /* No border */
+            padding: 8px 16px;
+            color: #428771; /* Font color */
+            font-size: 16px;
+            text-decoration: underline; /* Underline text */
+            cursor: pointer;
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        /* Hover style for the button */
+        #see-more:hover {
+            color: #336655; /* Slightly darker color on hover */
+        }
+    

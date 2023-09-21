@@ -81,3 +81,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const seeMoreButton = document.getElementById('see-more');
+  const hiddenItems = document.querySelectorAll('.hidden');
+  let expanded = false;
+
+  function toggleItems() {
+      hiddenItems.forEach(item => {
+          item.style.display = expanded ? 'none' : 'list-item';
+      });
+      seeMoreButton.textContent = expanded ? 'Mostrar más' : 'Mostrar menos';
+      expanded = !expanded;
+
+      if (!expanded) {
+        // Scroll to the item with the ID "propiedad"
+        const propiedadItem = document.getElementById('propiedad');
+        propiedadItem.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  seeMoreButton.addEventListener('click', toggleItems);
+});
