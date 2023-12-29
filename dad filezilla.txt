@@ -1,4 +1,11 @@
+~cl site
 Servidor FTP: ftp.webcrea.cl
 user: acceso@inmejorableinversiongastronomica.cl
 pass: ghPO6%YP;YyJ
 Port: 21
+
+~com site
+host: inmejorableinversiongastronomica.com
+port: 21
+user: mfontecilla@inmejorableinversiongastronomica.com
+pass: CessnaC152!Inm
