@@ -1,21 +1,46 @@
 <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $message = $_POST['message'];
+header('Content-Type: application/json; charset=UTF-8');
 
-        // validate the form data here (e.g. check for empty fields, validate email address format, etc.)
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'error' => 'Method not allowed']);
+    exit;
+}
 
-        // send an email to the site owners with the form data
-        $to = 'matias.fontecilla@hotmail.com, rodriguez.u.carlos@gmail.com,fonte757@gmail.com'; // Both email addresses
-        $subject = 'Secoyas Inquiry';
-        $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
-        $headers = "From: info@inmejorableinversiongastronomica.com\r\n";
-        $headers .= "Reply-To: $email\r\n";
-        mail($to, $subject, $body, $headers);
+$name    = trim(strip_tags($_POST['name']    ?? ''));
+$email   = trim(strip_tags($_POST['email']   ?? ''));
+$phone   = trim(strip_tags($_POST['phone']   ?? ''));
+$message = trim(strip_tags($_POST['message'] ?? ''));
 
-        // send a response back to the client indicating that the form was submitted successfully
-        http_response_code(200);
-    }
-?>
+if (!$name || !$email || !$phone || !$message) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'error' => 'Todos los campos son requeridos']);
+    exit;
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'error' => 'Email inválido']);
+    exit;
+}
+
+$to      = 'matias.fontecilla@hotmail.com, rodriguez.u.carlos@gmail.com, fonte757@gmail.com';
+$subject = 'Consulta de Inversión — Las Secoyas';
+
+$body  = "Nombre:   $name\r\n";
+$body .= "Email:    $email\r\n";
+$body .= "Teléfono: $phone\r\n";
+$body .= "Mensaje:\r\n$message";
+
+$headers  = "From: info@inmejorableinversiongastronomica.com\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+$sent = mail($to, $subject, $body, $headers);
+
+if ($sent) {
+    echo json_encode(['success' => true]);
+} else {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'error' => 'No se pudo enviar el email']);
+}
