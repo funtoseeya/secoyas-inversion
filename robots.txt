@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /submit-form.php
+
+Sitemap: https://inmejorableinversiongastronomica.com/sitemap.xml
