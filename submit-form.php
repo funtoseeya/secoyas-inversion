@@ -24,7 +24,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$to      = 'matias.fontecilla@hotmail.com, rodriguez.u.carlos@gmail.com, fonte757@gmail.com';
+$to      = 'matiasfuntoseeya@gmail.com, rodriguez.u.carlos@gmail.com, fonte757@gmail.com';
 $subject = 'Consulta de Inversión — Las Secoyas';
 
 $body  = "Nombre:   $name\r\n";
