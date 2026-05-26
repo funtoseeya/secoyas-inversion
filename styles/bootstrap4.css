@@ -10239,27 +10239,41 @@ body { overflow-x: hidden; }
   margin: -1.5rem -1.5rem 1.5rem;
 }
 
-.pc-row {
+.pc-compare {
   display: flex;
-  justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 1rem;
+}
+
+.pc-col {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0;
+  gap: 0.2rem;
 }
 
-.pc-row + .pc-row {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin-top: 0.25rem;
-  padding-top: 0.75rem;
+.pc-col-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 1rem;
+  align-self: stretch;
 }
 
-.pc-label {
-  display: block;
+.pc-col-label {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 0.2rem;
+}
+
+.pc-col-sub {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 0.35rem;
 }
 
 .pc-strike {
@@ -10280,7 +10294,8 @@ body { overflow-x: hidden; }
   padding: 0.25rem 0.65rem;
   border-radius: 50px;
   white-space: nowrap;
-  margin-left: 0.75rem;
+  margin-top: 0.4rem;
+  margin-left: 0;
 }
 
 .pc-price {
