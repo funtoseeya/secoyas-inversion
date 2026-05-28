@@ -10263,24 +10263,24 @@ body { overflow-x: hidden; }
 }
 
 .pc-col-label {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.85);
 }
 
 .pc-col-sub {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.3);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
   margin-bottom: 0.35rem;
 }
 
 .pc-strike {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.55);
   text-decoration: line-through;
   display: block;
 }
@@ -10308,11 +10308,17 @@ body { overflow-x: hidden; }
 }
 
 .pc-conversion {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.35);
-  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  margin: 0.75rem 0 0.4rem;
   padding-top: 0.65rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.pc-land-value {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
 }
 
 .pc-equity {
