@@ -10315,29 +10315,21 @@ body { overflow-x: hidden; }
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-.pc-land-value {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.55);
-  margin: 0;
-}
-
 .pc-equity {
   border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 0.85rem;
   padding-top: 0.85rem;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.55;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
 }
 
 .pc-equity p {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
-.pc-equity-note {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 0 !important;
+.pc-equity p:last-child {
+  margin-bottom: 0;
 }
 
 /* ─── Business Accordion ─────────────────────────────────────────────────── */
