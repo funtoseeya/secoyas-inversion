@@ -1,0 +1,96 @@
+{
+  "fecha": "Agosto 2026",
+
+  "tipoCambio": {
+    "ufEnPesos": 41000,
+    "dolarEnPesos": 930,
+    "ufEnDolares": 44
+  },
+
+  "portada": {
+    "titulo": "Una inmejorable inversión gastronómica",
+    "subtitulo": "Parque y Casa de Eventos Las Secoyas · Calera de Tango, Chile",
+    "datos": [
+      { "valor": "16 años", "etiqueta": "en operación" },
+      { "valor": "7.300 m²", "etiqueta": "de terreno" },
+      { "valor": "300", "etiqueta": "personas de capacidad" },
+      { "valor": "UF 79.000", "etiqueta": "tasación total" }
+    ]
+  },
+
+  "oferta": {
+    "valor50": { "uf": 25000, "clp": 1025000000 },
+    "entrada": { "uf": 8000, "clp": 328000000, "usd": 353000 },
+    "saldo": { "uf": 17000, "clp": 697000000 },
+    "mesesGracia": 6,
+    "plazoAnios": 12,
+    "cuotaAnualUF": 1417,
+    "cuotaMensualUF": 118,
+    "proporcionIngreso": "aprox. 1/3",
+    "nota": "Acuerdo de opción de \"compra o venta\" de la propiedad y negocio durante el periodo de 12 años. (Previa tasación profesional)"
+  },
+
+  "ingresoSocio": {
+    "directores": { "anualUF": 240, "mensualUF": 20, "mensualCLP": 820000 },
+    "utilidades": { "anualUF": 2517, "mensualUF": 210, "mensualCLP": 8598233 },
+    "arriendo": { "anualUF": 1200, "mensualUF": 100, "mensualCLP": 4100000 },
+    "total": { "anualUF": 3957, "mensualUF": 330 }
+  },
+
+  "resumen": {
+    "eventos": {
+      "invitadosPorEvento": 120,
+      "tiposDeEvento": "Matrimonios, graduaciones y eventos de fin de año",
+      "personasAnuales": 5400,
+      "precioBruto": 78540,
+      "precioNeto": 66000,
+      "ventasBrutas": { "clp": 424116000, "uf": 10344 },
+      "ventasNetas": { "clp": 356400000, "uf": 8693 },
+      "costosDirectos": { "divisor": 3, "clp": 118800000, "uf": 2898 },
+      "margenNeto": { "clp": 237600000, "uf": 5795, "pct": 67 }
+    },
+    "patio": {
+      "diasPorMes": 25,
+      "ventaDiariaBruta": 1328000,
+      "ventaDiariaNeta": 1115966,
+      "ventasBrutas": { "clp": 398400000, "uf": 9717 },
+      "ventasNetas": { "clp": 334789916, "uf": 8166 },
+      "costosDirectos": { "divisor": 4, "clp": 83697479, "uf": 2041 },
+      "margenNeto": { "clp": 251092437, "uf": 6124, "pct": 75 }
+    },
+    "consolidado": {
+      "ingresosBrutos": { "clp": 822516000, "uf": 20061 },
+      "ingresosNetos": { "clp": 691189916, "uf": 16858 },
+      "costosDirectos": { "clp": 202497479, "uf": 4939, "pct": 29.3 },
+      "margenBruto": { "clp": 488692437, "uf": 11919, "pct": 70.7 },
+      "costosFijos": [
+        { "concepto": "Arriendo propiedad (UF 200/mes)", "clp": 98400000, "uf": 2400 },
+        { "concepto": "Directores", "clp": 19680000, "uf": 480 },
+        { "concepto": "Personal", "clp": 110952000, "uf": 2706 },
+        { "concepto": "Bonos, incentivos y horas extras", "clp": 28127853, "uf": 686 },
+        { "concepto": "Cuentas básicas", "clp": 25175000, "uf": 614 }
+      ],
+      "totalCostosFijos": { "clp": 282334853, "uf": 6886, "pct": 40.8 },
+      "utilidadAntesImpuestos": { "clp": 206357584, "uf": 5033, "pct": 29.9 }
+    }
+  },
+
+  "rentabilidad": {
+    "valor50": { "clp": 1025000000, "uf": 25000 },
+    "utilidadAnual": { "clp": 206357584, "uf": 5033 },
+    "arriendo": { "clp": 98400000, "uf": 2400 },
+    "honorariosSocios": { "clp": 19680000, "uf": 480 },
+    "totalIngresos": { "clp": 324437584, "uf": 7913 },
+    "porSocio": { "clp": 162218792, "uf": 3957 },
+    "aniosRecupero": 6.3,
+    "rentabilidadAnualPct": 15.8
+  },
+
+  "contacto": {
+    "telefono": "+56 9 6834 5841",
+    "whatsapp": "56968345841",
+    "email": "infosecoyaseventos@gmail.com",
+    "web": "inmejorableinversiongastronomica.com",
+    "direccion": "Camino Lonquén Norte 12180, Paradero 8, Calera de Tango"
+  }
+}

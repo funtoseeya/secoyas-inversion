@@ -158,6 +158,25 @@ if (whatsappButton) {
 }
 
 
+// ─── Info package download tracking ──────────────────────────────────────────
+
+document.querySelectorAll('a[href$="PPT_SECOYAS.pdf"]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    var ubicacion = link.getAttribute('data-ubicacion') || 'otro';
+    if (typeof gtag === 'function') {
+      gtag('event', 'descarga_paquete', {
+        event_category: 'Download',
+        event_label: 'Paquete Informativo',
+        ubicacion: ubicacion
+      });
+    }
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', 'DescargaPaquete', { ubicacion: ubicacion });
+    }
+  });
+});
+
+
 // ─── Contact form ────────────────────────────────────────────────────────────
 
 const form = document.querySelector('form');

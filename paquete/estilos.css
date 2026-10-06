@@ -1,0 +1,314 @@
+/* Paquete Informativo — print stylesheet (A4 landscape). Colors and fonts mirror the website's design system.
+   Type is sized for comfortable reading on paper and on a phone: nothing below 8.5pt. */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fuentes/montserrat-latin.woff2') format('woff2');
+  font-weight: 400 900;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('fuentes/raleway-latin.woff2') format('woff2');
+  font-weight: 400 700;
+}
+
+:root {
+  --verde:        #428771;
+  --verde-oscuro: #0D2818;
+  --verde-medio:  #1E4D35;
+  --verde-suave:  #E8F0EC;
+  --oro:          #C9A96E;
+  --oro-oscuro:   #A8824A;
+  --oro-suave:    #F6EFE2;
+  --crema:        #F7F8F6;
+  --texto:        #1C2526;
+  --gris:         #4A5551;
+  --linea:        #DDE3E0;
+}
+
+@page { size: 297mm 210mm; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--texto);
+  background: #8a948f;
+}
+
+.pagina {
+  position: relative;
+  width: 297mm;
+  height: 210mm;
+  overflow: hidden;
+  background: #fff;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+}
+.pagina:last-child { page-break-after: auto; break-after: auto; }
+
+@media screen {
+  body { padding: 10mm 0; }
+  .pagina { margin: 0 auto 10mm; box-shadow: 0 4px 24px rgba(0,0,0,.25); }
+}
+
+/* ─── Shared type ────────────────────────────────────────────────────────── */
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+}
+.eyebrow.claro { color: var(--oro); }
+
+h1, h2, h3, .n {
+  font-family: 'Montserrat', sans-serif;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+h2 { font-size: 22pt; font-weight: 700; line-height: 1.15; color: var(--verde-oscuro); }
+h3 { font-size: 12pt; font-weight: 700; color: var(--verde-oscuro); }
+
+/* ─── Content page frame ─────────────────────────────────────────────────── */
+
+.pag-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10mm 14mm 4.5mm;
+  border-bottom: 1px solid var(--linea);
+}
+.pag-cabecera h2 { margin-top: 1.2mm; }
+.pag-logo { height: 15mm; }
+
+.pag-cuerpo { flex: 1; padding: 5mm 14mm 0; min-height: 0; display: flex; flex-direction: column; }
+
+.pag-pie {
+  display: flex;
+  justify-content: space-between;
+  padding: 3mm 14mm 5.5mm;
+  font-size: 8.5pt;
+  color: var(--gris);
+}
+.pag-pie .tc { color: var(--verde-medio); font-weight: 700; }
+
+/* ─── 1. Cover ───────────────────────────────────────────────────────────── */
+
+.portada { background: var(--verde-medio); color: #fff; }
+.portada-foto {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.portada-velo { position: absolute; inset: 0; }
+.portada-panel {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15mm 18mm 13mm;
+}
+.portada-logo { height: 26mm; margin-bottom: 11mm; }
+.portada-fecha {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.portada h1 {
+  font-size: 38pt;
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 3mm 0 4mm;
+}
+.portada-sub { font-size: 14pt; }
+
+.portada-oferta {
+  margin-top: 9mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+  padding: 5mm 7mm;
+  border-left: 1.5mm solid var(--oro);
+  background: rgba(0,0,0,.22);
+}
+.portada-oferta .etq { font-size: 10pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.portada-oferta strong { font-family: 'Montserrat', sans-serif; font-size: 30pt; font-weight: 800; line-height: 1.1; }
+.portada-oferta .det { font-size: 13pt; }
+
+.portada-datos {
+  margin-top: auto;
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,.4);
+  padding-top: 5mm;
+}
+.portada-datos div { display: flex; flex-direction: column; }
+.portada-datos strong { font-family: 'Montserrat', sans-serif; font-size: 20pt; font-weight: 700; }
+.portada-datos span { font-size: 10.5pt; }
+
+/* Flat green tint, no gradient: keeps every line of white text legible over the photo */
+.portada-velo { background: rgba(22, 64, 43, .74); }
+.portada-panel > :not(.portada-datos) { max-width: 175mm; }
+
+/* ─── 2. Offer ───────────────────────────────────────────────────────────── */
+
+.oferta-grid { margin: auto 0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 8mm; padding-bottom: 3mm; }
+.oferta-izq { display: flex; flex-direction: column; gap: 8mm; }
+
+.valor-total { display: flex; align-items: baseline; gap: 4mm; margin-top: 1mm; }
+.valor-total .n { font-size: 32pt; font-weight: 800; color: var(--verde-oscuro); line-height: 1; }
+.valor-total .clp { font-size: 13pt; color: var(--gris); font-weight: 600; }
+
+.barra-split { display: flex; height: 9mm; border-radius: 1.5mm; overflow: hidden; margin: 4mm 0 4.5mm; }
+.barra-split div { display: flex; align-items: center; padding-left: 3mm; font-size: 9pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
+.seg-entrada { background: var(--oro-oscuro); }
+.seg-saldo { background: var(--verde); }
+
+.split-detalle { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.split-detalle > div { border-left: 1.2mm solid; padding-left: 3.5mm; }
+.split-detalle .d-entrada { border-color: var(--oro-oscuro); }
+.split-detalle .d-saldo { border-color: var(--verde); }
+.split-detalle .etq { display: block; font-size: 10pt; color: var(--gris); }
+.split-detalle .n { display: block; font-size: 20pt; font-weight: 700; color: var(--verde-oscuro); line-height: 1.25; }
+.split-detalle .sec { font-size: 10.5pt; }
+
+.condiciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.condicion { background: var(--crema); border-radius: 2mm; padding: 4.5mm; }
+.condicion .n { display: block; font-size: 22pt; font-weight: 800; color: var(--verde-medio); line-height: 1.1; }
+.condicion strong { display: block; font-size: 11pt; color: var(--verde-oscuro); margin: 1mm 0 1.2mm; }
+.condicion span { display: block; font-size: 10pt; color: var(--gris); line-height: 1.35; }
+
+.nota {
+  background: var(--oro-suave);
+  border-left: 1.5mm solid var(--oro);
+  border-radius: 0 2mm 2mm 0;
+  padding: 4mm 5mm;
+  font-size: 11pt;
+}
+.nota strong { color: var(--oro-oscuro); }
+
+.panel-oscuro {
+  background: var(--verde-oscuro);
+  color: #fff;
+  border-radius: 3mm;
+  padding: 6mm 6.5mm;
+  display: flex;
+  flex-direction: column;
+}
+.panel-oscuro h3 { color: #fff; font-size: 14pt; margin: 1mm 0 4mm; }
+
+.barra-ingresos { display: flex; height: 3.5mm; border-radius: 1mm; overflow: hidden; margin-bottom: 2mm; }
+.c-util { background: var(--verde); }
+.c-arr { background: var(--oro); }
+.c-dir { background: #8FB8A6; }
+
+.ingreso-fila { display: grid; grid-template-columns: 3mm 1fr auto; column-gap: 2.5mm; align-items: baseline; padding: 3mm 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+.ingreso-fila .punto { width: 3mm; height: 3mm; border-radius: 50%; align-self: center; }
+.ingreso-fila .nombre { font-size: 11pt; }
+.ingreso-fila .val { font-size: 13pt; font-weight: 700; text-align: right; }
+.ingreso-fila small { grid-column: 2 / 4; text-align: right; font-size: 9.5pt; opacity: .8; }
+
+.ingreso-total { display: flex; justify-content: space-between; align-items: baseline; padding: 4mm 0 0; margin-bottom: 6mm; }
+.ingreso-total span { font-size: 10pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--oro); }
+.ingreso-total .n { font-size: 22pt; font-weight: 800; }
+.ingreso-total small { display: block; text-align: right; font-size: 10pt; opacity: .8; }
+
+.proporcion { margin-top: auto; padding-top: 4.5mm; border-top: 1px solid rgba(255,255,255,.25); }
+.proporcion p { font-size: 10.5pt; margin-bottom: 2.5mm; }
+.proporcion p strong { color: var(--oro); }
+.prop-barra { position: relative; height: 3.5mm; border-radius: 1mm; background: rgba(255,255,255,.18); overflow: hidden; }
+.prop-barra div { position: absolute; inset: 0 auto 0 0; background: var(--oro); }
+
+/* ─── 3. Results summary ─────────────────────────────────────────────────── */
+
+.resumen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; align-items: start; }
+.resumen-col { display: flex; flex-direction: column; gap: 5mm; }
+
+.tarjeta { border: 1px solid var(--linea); border-radius: 2.5mm; overflow: hidden; }
+.tarjeta-cab { display: flex; align-items: center; gap: 3mm; padding: 2.8mm 4mm; background: var(--verde-suave); }
+.tarjeta-cab .num { font-family: 'Montserrat', sans-serif; font-size: 9pt; font-weight: 800; color: #fff; background: var(--verde-medio); border-radius: 50%; width: 6mm; height: 6mm; display: flex; align-items: center; justify-content: center; }
+
+.supuestos { display: flex; flex-wrap: wrap; gap: .8mm 5mm; padding: 2.5mm 4mm 0; font-size: 10pt; color: var(--gris); }
+.supuestos b { color: var(--texto); font-weight: 700; }
+
+.tabla { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 10pt; }
+.tabla .col-clp { width: 31mm; }
+.tabla .col-uf { width: 19mm; }
+.tabla .col-pct { width: 18mm; }
+.tabla th { font-family: 'Montserrat', sans-serif; font-size: 8.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); text-align: right; padding: 2mm 0 1mm; }
+.tabla th:first-child { text-align: left; }
+.tabla td { padding: 1.9mm 0 1.9mm 4mm; border-top: 1px solid var(--linea); }
+.tabla td.n { text-align: right; white-space: nowrap; padding-left: 0; }
+.tabla td.pct { padding-right: 4mm; color: var(--verde-medio); font-weight: 700; }
+.tabla .seccion td { font-size: 8.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--verde-medio); padding-top: 2.2mm; }
+.tabla .subtotal td { background: var(--crema); font-weight: 700; }
+.tabla .margen td { background: var(--verde-suave); font-weight: 700; color: var(--verde-oscuro); }
+.tabla .total td { background: var(--verde-oscuro); color: #fff; font-weight: 700; font-size: 11pt; padding-top: 2.6mm; padding-bottom: 2.6mm; border-top: 0; }
+.tabla .total td.pct { color: var(--oro); }
+.tabla .total small { display: block; font-weight: 400; font-size: 9pt; opacity: .85; }
+
+/* ─── 4. Return on investment ────────────────────────────────────────────── */
+
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-bottom: 6mm; }
+.kpi { border-radius: 3mm; padding: 5.5mm 6mm 5mm; background: var(--crema); }
+.kpi.destacado { background: var(--verde-oscuro); color: #fff; }
+.kpi .etq { font-size: 9.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+.kpi.destacado .etq { color: var(--oro); }
+.kpi .n { display: block; font-size: 32pt; font-weight: 800; line-height: 1.1; margin: 2mm 0 1mm; color: var(--verde-oscuro); }
+.kpi.destacado .n { color: #fff; }
+.kpi .sec { font-size: 10.5pt; color: var(--gris); }
+.kpi.destacado .sec { color: #fff; opacity: .85; }
+
+.calculo h3 { font-size: 13pt; margin-bottom: 3mm; }
+.flujo { display: flex; align-items: stretch; gap: 2mm; }
+.flujo .op { align-self: center; font-family: 'Montserrat', sans-serif; font-size: 16pt; font-weight: 700; color: var(--oro-oscuro); width: 6mm; text-align: center; }
+.caja { flex: 1; border: 1px solid var(--linea); border-radius: 2.5mm; padding: 3.5mm; display: flex; flex-direction: column; }
+.caja .etq { font-size: 10pt; color: var(--gris); min-height: 13mm; line-height: 1.3; }
+.caja .n { font-size: 16pt; font-weight: 700; color: var(--verde-oscuro); margin-top: 1mm; }
+.caja .sec { font-size: 10pt; color: var(--gris); }
+.caja.suma { background: var(--crema); }
+.caja.final { background: var(--verde-medio); border-color: var(--verde-medio); color: #fff; }
+.caja.final .etq, .caja.final .sec, .caja.final .n { color: #fff; }
+
+.aclaracion { margin-top: 3mm; font-size: 9.5pt; color: var(--gris); }
+
+.fotos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 6mm; }
+.fotos figure { position: relative; height: 44mm; border-radius: 2.5mm; overflow: hidden; }
+.fotos img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fotos figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 2.5mm 4mm;
+  background: rgba(13,40,24,.78);
+  color: #fff; font-size: 10.5pt; font-weight: 600;
+}
+
+/* ─── 5. Contact ─────────────────────────────────────────────────────────── */
+
+.contacto { flex-direction: row; background: var(--verde-oscuro); color: #fff; }
+.contacto-foto { width: 46%; height: 100%; object-fit: cover; }
+.contacto-panel { flex: 1; padding: 15mm 15mm 12mm; display: flex; flex-direction: column; }
+.contacto-panel .logo { height: 18mm; align-self: flex-start; margin-bottom: 9mm; }
+.contacto-panel .eyebrow { font-size: 10pt; }
+.contacto-panel h2 { color: #fff; font-size: 30pt; margin: 2mm 0 4mm; }
+.contacto-panel .intro { font-size: 12.5pt; }
+.contacto-lista { list-style: none; margin-top: 8mm; display: grid; gap: 4mm; }
+.contacto-lista li { display: grid; grid-template-columns: 38mm 1fr; font-size: 12.5pt; }
+.contacto-lista span { font-size: 9pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--oro); padding-top: 1mm; }
+.contacto-lista a { color: #fff; text-decoration: none; }
+.descargo { margin-top: auto; font-size: 9pt; opacity: .75; line-height: 1.45; }
