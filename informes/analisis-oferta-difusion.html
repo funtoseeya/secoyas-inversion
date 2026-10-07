@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!-- Internal report for the Las Secoyas partners — NOT for the public website (see .htaccess).
+     PDF: print with headless Chrome, e.g.
+     chrome --headless --no-pdf-header-footer --print-to-pdf=informes/Las-Secoyas-Analisis-Oferta-y-Difusion-Oct-2026.pdf informes/analisis-oferta-difusion.html -->
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Las Secoyas — Análisis de la oferta y estrategia de difusión</title>
+<style>
+@font-face { font-family: 'Montserrat'; src: url('../paquete/fuentes/montserrat-latin.woff2') format('woff2'); font-weight: 400 900; }
+@font-face { font-family: 'Raleway'; src: url('../paquete/fuentes/raleway-latin.woff2') format('woff2'); font-weight: 400 700; }
+
+:root {
+  --verde: #428771;
+  --verde-oscuro: #0D2818;
+  --verde-medio: #1E4D35;
+  --verde-suave: #E8F0EC;
+  --oro: #C9A96E;
+  --oro-oscuro: #8C6A35;
+  --oro-suave: #F6EFE2;
+  --crema: #F7F8F6;
+  --texto: #1C2526;
+  --gris: #4A5551;
+  --linea: #DDE3E0;
+  --ok: #2F7D4F;
+  --ojo: #B7860B;
+  --alerta: #B03A2E;
+}
+
+@page {
+  size: A4;
+  margin: 20mm 20mm 22mm;
+  @bottom-left { content: "Las Secoyas · Análisis de la oferta y difusión · Octubre 2026"; font-family: 'Raleway', sans-serif; font-size: 9pt; color: #4A5551; }
+  @bottom-right { content: "Página " counter(page) " de " counter(pages); font-family: 'Raleway', sans-serif; font-size: 9pt; color: #4A5551; }
+}
+@page :first {
+  margin: 0;
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 12pt;
+  line-height: 1.55;
+  color: var(--texto);
+}
+
+h1, h2, h3, .n { font-family: 'Montserrat', sans-serif; font-variant-numeric: lining-nums; }
+h2 { font-size: 21pt; font-weight: 800; color: var(--verde-oscuro); line-height: 1.2; margin-bottom: 4mm; }
+h3 { font-size: 13.5pt; font-weight: 700; color: var(--verde-oscuro); margin-bottom: 1.5mm; }
+p + p { margin-top: 3mm; }
+strong { font-weight: 700; }
+
+.seccion { break-before: page; }
+.eyebrow { display: block; font-family: 'Montserrat', sans-serif; font-size: 9.5pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde-medio); margin-bottom: 1.5mm; }
+.intro { font-size: 12.5pt; margin-bottom: 5mm; }
+.chico { font-size: 10pt; color: var(--gris); }
+.evitar-corte { break-inside: avoid; }
+
+/* ─── Cover ─── */
+.portada { position: relative; width: 210mm; height: 297mm; overflow: hidden; color: #fff; background: var(--verde-medio); }
+.portada img.foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.portada .velo { position: absolute; inset: 0; background: rgba(22, 64, 43, .80); }
+.portada .contenido { position: relative; height: 100%; padding: 24mm 20mm 22mm; display: flex; flex-direction: column; }
+.portada .logo { height: 26mm; align-self: flex-start; }
+.portada .eyebrow { color: #fff; font-size: 11pt; margin-top: 52mm; }
+.portada h1 { font-size: 34pt; font-weight: 800; line-height: 1.12; margin: 4mm 0 6mm; }
+.portada .sub { font-size: 15pt; line-height: 1.45; max-width: 150mm; }
+.portada .para { margin-top: auto; border-top: 1px solid rgba(255,255,255,.45); padding-top: 6mm; font-size: 12.5pt; }
+.portada .para strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 10pt; letter-spacing: .1em; text-transform: uppercase; color: var(--oro); margin-bottom: 1mm; }
+
+/* ─── Key ideas ─── */
+.idea { display: grid; grid-template-columns: 13mm 1fr; gap: 4mm; padding: 5mm 0; border-bottom: 1px solid var(--linea); break-inside: avoid; }
+.idea:last-of-type { border-bottom: 0; }
+.idea .num { font-family: 'Montserrat', sans-serif; font-size: 20pt; font-weight: 800; color: #fff; background: var(--verde-medio); border-radius: 50%; width: 12mm; height: 12mm; display: flex; align-items: center; justify-content: center; }
+.idea h3 { font-size: 14pt; }
+
+.recuadro { background: var(--crema); border-left: 1.6mm solid var(--verde); border-radius: 0 2.5mm 2.5mm 0; padding: 4.5mm 5.5mm; margin-top: 5mm; break-inside: avoid; }
+.recuadro.oro { background: var(--oro-suave); border-left-color: var(--oro); }
+.recuadro h3 { margin-bottom: 2.5mm; }
+.recuadro ol { padding-left: 6mm; }
+.recuadro li + li { margin-top: 1.5mm; }
+
+/* ─── Traffic-light table ─── */
+.semaforo { width: 100%; border-collapse: collapse; }
+.semaforo td { padding: 2.6mm 2.5mm; font-size: 11pt; line-height: 1.45; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.semaforo tr { break-inside: avoid; }
+.semaforo td.tema { width: 42mm; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11.5pt; color: var(--verde-oscuro); }
+.semaforo td.estado { width: 34mm; }
+.pildora { display: inline-flex; align-items: center; gap: 2mm; font-family: 'Montserrat', sans-serif; font-size: 9.5pt; font-weight: 700; padding: 1mm 3mm 1mm 2mm; border-radius: 5mm; white-space: nowrap; }
+.pildora::before { content: ""; width: 3.6mm; height: 3.6mm; border-radius: 50%; background: currentColor; }
+.p-ok { color: var(--ok); background: #E4F1E8; }
+.p-ojo { color: var(--ojo); background: #FBF1D9; }
+.p-alerta { color: var(--alerta); background: #F8E3E0; }
+
+/* ─── Big-number cards ─── */
+.cifras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-bottom: 5mm; }
+.cifra { background: var(--verde-oscuro); color: #fff; border-radius: 3mm; padding: 4.5mm; break-inside: avoid; }
+.cifra .n { display: block; white-space: nowrap; font-size: 21pt; font-weight: 800; line-height: 1.1; color: var(--oro); }
+.cifra strong { display: block; font-size: 11.5pt; margin: 2mm 0 2mm; line-height: 1.35; }
+.cifra p { font-size: 10pt; line-height: 1.4; }
+
+.tabla-simple { width: 100%; border-collapse: collapse; margin: 3mm 0 2mm; }
+.tabla-simple th { font-family: 'Montserrat', sans-serif; font-size: 9.5pt; width: 72mm; text-align: left; color: var(--gris); padding: 2mm 3mm; border-bottom: 2px solid var(--linea); }
+.tabla-simple td { padding: 1.8mm 3mm; font-size: 11pt; border-bottom: 1px solid var(--linea); }
+.tabla-simple td.n { font-weight: 700; color: var(--verde-oscuro); }
+
+/* ─── Buyer path diagram ─── */
+.camino { margin: 6mm 0 6mm; display: flex; flex-direction: column; align-items: center; gap: 2.5mm; }
+.paso { border-radius: 3mm; padding: 4.5mm 6mm; display: grid; grid-template-columns: 1fr auto; gap: 4mm; align-items: center; break-inside: avoid; }
+.paso:nth-child(1) { width: 100%; background: #F8E3E0; }
+.paso:nth-child(3) { width: 86%; background: var(--verde-suave); }
+.paso:nth-child(5) { width: 72%; background: var(--verde-suave); }
+.paso h3 { margin-bottom: .5mm; }
+.paso p { font-size: 11pt; }
+.flecha { font-size: 16pt; color: var(--gris); line-height: 1; }
+
+/* ─── Channels ─── */
+.canal { display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; padding: 3.2mm 0; border-bottom: 1px solid var(--linea); break-inside: avoid; }
+.canal:last-child { border-bottom: 0; }
+.canal .num { font-family: 'Montserrat', sans-serif; font-size: 15pt; font-weight: 800; color: var(--verde-medio); }
+.canal p { font-size: 11pt; line-height: 1.45; }
+.canal .cab { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.costo { flex-shrink: 0; white-space: nowrap; font-family: 'Montserrat', sans-serif; font-size: 9.5pt; font-weight: 700; color: var(--oro-oscuro); background: var(--oro-suave); padding: .6mm 2.5mm; border-radius: 3mm; }
+
+/* ─── Adjustments list ─── */
+.ajustes { list-style: none; counter-reset: a; }
+.ajustes li { counter-increment: a; display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; padding: 2.8mm 0; border-bottom: 1px solid var(--linea); break-inside: avoid; }
+.ajustes li::before { content: counter(a); font-family: 'Montserrat', sans-serif; font-size: 15pt; font-weight: 800; color: var(--verde-medio); }
+.ajustes li:last-child { border-bottom: 0; }
+.ajustes p { font-size: 11pt; line-height: 1.45; }
+
+/* ─── Decisions table ─── */
+.decisiones { width: 100%; border-collapse: collapse; font-size: 11pt; }
+.decisiones th { font-family: 'Montserrat', sans-serif; font-size: 9.5pt; letter-spacing: .06em; text-transform: uppercase; text-align: left; color: #fff; background: var(--verde-medio); padding: 2.6mm 3mm; }
+.decisiones td { padding: 2.2mm 3mm; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.decisiones tr { break-inside: avoid; }
+.decisiones td.blanco { width: 23mm; border-left: 1px solid var(--linea); }
+.decisiones td.reco { width: 58mm; color: var(--verde-medio); font-weight: 600; }
+
+.cierre { margin-top: 6mm; font-size: 13pt; font-weight: 600; color: var(--verde-oscuro); break-inside: avoid; }
+.notas { margin-top: 5mm; padding-top: 4mm; border-top: 1px solid var(--linea); font-size: 9.5pt; color: var(--gris); line-height: 1.5; break-inside: avoid; }
+.notas p + p { margin-top: 1.5mm; }
+</style>
+</head>
+<body>
+
+<!-- ─────────────────────────── Portada ─────────────────────────── -->
+<section class="portada">
+  <img class="foto" src="../paquete/img/portada.jpg" alt="">
+  <div class="velo"></div>
+  <div class="contenido">
+    <img class="logo" src="../images/logo3.png" alt="Las Secoyas">
+    <span class="eyebrow">Análisis independiente · Octubre 2026</span>
+    <h1>La oferta de Las Secoyas y cómo hacerla llegar al comprador correcto</h1>
+    <p class="sub">Una mirada de inversionista y de corredor de propiedades, para conversar y decidir en equipo.</p>
+    <div class="para"><strong>Para</strong>Socios y equipo de Las Secoyas SPA</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── Lo esencial ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">Resumen</span>
+  <h2>Lo esencial, en una página</h2>
+  <p class="intro">Este informe revisa la oferta de Las Secoyas tal como la vería un inversionista o un corredor de propiedades, y propone cómo lograr que más compradores adecuados la conozcan. Se basa en el sitio web y en el paquete informativo de agosto de 2026.</p>
+
+  <div class="idea">
+    <span class="num">1</span>
+    <div>
+      <h3>La oferta es atractiva para el comprador correcto.</h3>
+      <p>Un negocio con 16 años de trayectoria, premios y clientes satisfechos, respaldado por una propiedad de 7.300 m² y con financiamiento directo al 0%. El comprador ideal es alguien que quiera operar el negocio: una banquetera, un operador de eventos o un grupo gastronómico.</p>
+    </div>
+  </div>
+  <div class="idea">
+    <span class="num">2</span>
+    <div>
+      <h3>El sitio web y el paquete están bien hechos. Lo que falta es que más personas los vean.</h3>
+      <p>El sitio funciona como un muy buen folleto: convence a quien lo recibe, pero no sale a buscar compradores. Hoy pocas personas llegan a él porque casi no hay avisos que lo muestren.</p>
+    </div>
+  </div>
+  <div class="idea">
+    <span class="num">3</span>
+    <div>
+      <h3>Un inversionista serio pedirá ver ventas reales.</h3>
+      <p>Las cifras del paquete son una proyección para 2027. Tener a mano las ventas reales de los últimos años, en especial las del Patio de Comidas, acelera cualquier negociación.</p>
+    </div>
+  </div>
+
+  <div class="recuadro">
+    <h3>Tres pasos recomendados para las próximas semanas</h3>
+    <ol>
+      <li>Publicar avisos en Portal Inmobiliario y en la sección de negocios de Yapo.cl, con enlace al sitio.</li>
+      <li>Instalar un letrero en la entrada, con un código QR que lleve al sitio.</li>
+      <li>Conversar con un corredor que ya tenga compradores para este tipo de propiedad.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─────────────────────────── La oferta vista por un inversionista ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">La oferta</span>
+  <h2>Cómo la vería un inversionista</h2>
+  <p class="intro">Así evaluaría la oferta una persona que revisa muchas oportunidades de inversión. En verde, las fortalezas. En amarillo, lo que el comprador va a preguntar: no son problemas, pero conviene tener la respuesta preparada.</p>
+
+  <table class="semaforo">
+    <tr>
+      <td class="tema">Trayectoria</td>
+      <td class="estado"><span class="pildora p-ok">Fortaleza</span></td>
+      <td>16 años de operación, nota 4,9 en Matrimonios.cl y 10 premios Wedding Awards. Es lo más difícil de construir desde cero.</td>
+    </tr>
+    <tr>
+      <td class="tema">Respaldo de la propiedad</td>
+      <td class="estado"><span class="pildora p-ok">Fortaleza</span></td>
+      <td>7.300 m² de terreno y 1.050 m² construidos. Si el negocio rindiera menos de lo esperado, la propiedad sigue ahí.</td>
+    </tr>
+    <tr>
+      <td class="tema">Financiamiento directo al 0%</td>
+      <td class="estado"><span class="pildora p-ok">Fortaleza</span></td>
+      <td>Muy pocos vendedores lo ofrecen. Un banco cobraría UF + 4 a 5% al año. El detalle está en la página siguiente.</td>
+    </tr>
+    <tr>
+      <td class="tema">Entrada accesible</td>
+      <td class="estado"><span class="pildora p-ok">Fortaleza</span></td>
+      <td>Con UF 8.000 se accede al 50% de la propiedad y del negocio.</td>
+    </tr>
+    <tr>
+      <td class="tema">Patio de Comidas</td>
+      <td class="estado"><span class="pildora p-ojo">Preguntará</span></td>
+      <td>Aporta cerca de la mitad del margen proyectado. El comprador querrá saber cuánto vende hoy.</td>
+    </tr>
+    <tr>
+      <td class="tema">Sociedad al 50%</td>
+      <td class="estado"><span class="pildora p-ojo">Preguntará</span></td>
+      <td>Muchos inversionistas prefieren el control total o una salida clara. Conviene explicar quién es el otro socio, qué rol tendría el nuevo y cómo funciona la opción de compra o venta.</td>
+    </tr>
+    <tr>
+      <td class="tema">Recepción final</td>
+      <td class="estado"><span class="pildora p-ojo">Preguntará</span></td>
+      <td>El sitio indica "Recepción Final como Categoría Habitacional". El abogado del comprador preguntará cómo se compatibiliza con el uso como centro de eventos.</td>
+    </tr>
+    <tr>
+      <td class="tema">Rentabilidad de 15,8%</td>
+      <td class="estado"><span class="pildora p-ojo">Preguntará</span></td>
+      <td>Es alta para el rubro. Está calculada antes de impuestos e incluye el arriendo y los honorarios de director; conviene decirlo así.</td>
+    </tr>
+    <tr>
+      <td class="tema">Cuántos conocen la oferta</td>
+      <td class="estado"><span class="pildora p-alerta">Por mejorar</span></td>
+      <td>Es el punto más débil hoy, y el más fácil de mejorar. Se explica en las páginas 5 y 6.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ─────────────────────────── Argumentos que más venden ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">Argumentos de venta</span>
+  <h2>Las fortalezas que conviene destacar</h2>
+  <p class="intro">La oferta tiene ventajas reales que hoy no aparecen destacadas. Son las que un corredor pondría primero.</p>
+
+  <div class="cifras">
+    <div class="cifra">
+      <span class="n">UF 21.000</span>
+      <strong>Precio real del 50%, gracias al 0% de interés</strong>
+      <p>El saldo de UF 17.000 se paga en 12 años sin intereses. Con un banco costaría UF + 4 a 5% anual: ese ahorro equivale a pagar cerca de UF 21.000 en vez de 25.000.</p>
+    </div>
+    <div class="cifra">
+      <span class="n">32% anual</span>
+      <strong>Lo que rinde la entrada de UF 8.000</strong>
+      <p>Cada socio recibe UF 3.957 al año y paga una cuota de UF 1.417: le quedan cerca de UF 2.540 al año sobre los UF 8.000 que puso (antes de impuestos).</p>
+    </div>
+    <div class="cifra">
+      <span class="n">16 años</span>
+      <strong>Un negocio funcionando, no solo un terreno</strong>
+      <p>Es lo que distingue a Las Secoyas de otras propiedades en venta en la zona (ver el último recuadro de esta página).</p>
+    </div>
+  </div>
+
+  <div class="recuadro evitar-corte">
+    <h3>¿Y si el Patio de Comidas vende menos de lo proyectado?</h3>
+    <p>Es lo primero que preguntará un inversionista, y la respuesta es tranquilizadora:</p>
+    <table class="tabla-simple">
+      <tr><th>Si el Patio de Comidas vende…</th><th>Resultado para cada socio</th></tr>
+      <tr><td>Lo proyectado</td><td class="n">15,8% anual</td></tr>
+      <tr><td>La mitad de lo proyectado</td><td class="n">Cerca de 10% anual</td></tr>
+      <tr><td>Una quinta parte de lo proyectado</td><td class="n">Alcanza para pagar la cuota anual</td></tr>
+    </table>
+    <p class="chico">Cálculo aproximado, manteniendo los demás costos iguales.</p>
+  </div>
+
+  <div class="recuadro oro evitar-corte">
+    <h3>La competencia en la zona</h3>
+    <p>Engel &amp; Völkers Calera de Tango ofrece a inversionistas una propiedad "especial para centro de eventos": 24.000 m² de terreno y 900 m² construidos por UF 34.000, sin negocio funcionando. Por metro cuadrado parece más barata; la ventaja de Las Secoyas es el negocio en marcha, su reputación y su ubicación. Conviene destacar eso más que el valor del terreno.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────── El sitio web ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">El sitio web</span>
+  <h2>Un muy buen folleto, no un aviso</h2>
+  <p class="intro">Es natural pensar que con un buen sitio web los compradores llegan solos. En la práctica no funciona así.</p>
+
+  <p>Un sitio web es como un folleto muy completo guardado en un cajón: funciona muy bien cuando se lo entregamos a alguien interesado, pero por sí solo no sale a buscar a nadie. Nadie escribe "inmejorableinversiongastronomica" en Google si no sabe que existe.</p>
+  <p>Las personas llegan a un sitio web desde otro lugar: un aviso, un letrero, un corredor o un mensaje de un conocido. Por eso la pregunta importante no es cómo mejorar el sitio, sino <strong>dónde poner los avisos que lleven a él</strong>.</p>
+
+  <div class="camino">
+    <div class="paso">
+      <div><h3>1. Se entera</h3><p>Ve un aviso o un letrero, o le habla un corredor o un conocido.</p></div>
+      <span class="pildora p-alerta">Hoy: muy poco</span>
+    </div>
+    <span class="flecha">▼</span>
+    <div class="paso">
+      <div><h3>2. Se interesa</h3><p>Visita el sitio web y descarga el paquete informativo.</p></div>
+      <span class="pildora p-ok">Hoy: bien resuelto</span>
+    </div>
+    <span class="flecha">▼</span>
+    <div class="paso">
+      <div><h3>3. Conversa</h3><p>Llama o escribe, pide documentos y visita la propiedad.</p></div>
+      <span class="pildora p-ok">Hoy: listo</span>
+    </div>
+  </div>
+
+  <div class="recuadro">
+    <p><strong>El paso 2 ya está bien resuelto.</strong> Lo que hoy frena la venta es el paso 1: muy pocas personas se enteran de que la oportunidad existe. Y no se necesitan miles de visitas: bastan las 20 o 30 personas correctas.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────── Cómo llegar a más compradores ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">Difusión</span>
+  <h2>Cómo llegar a más compradores</h2>
+  <p class="intro">Ordenado de mayor a menor impacto en relación al esfuerzo.</p>
+
+  <div class="canal">
+    <span class="num">1</span>
+    <div>
+      <div class="cab"><h3>Avisos en portales de propiedades y negocios</h3><span class="costo">Costo: bajo</span></div>
+      <p>Portal Inmobiliario, el más visitado de Chile para propiedades, y la sección de negocios de Yapo.cl, que hoy tiene más de 700 negocios en venta. Ahí buscan quienes ya quieren comprar. Cada aviso debe llevar el enlace al sitio.</p>
+    </div>
+  </div>
+  <div class="canal">
+    <span class="num">2</span>
+    <div>
+      <div class="cab"><h3>Letrero en la entrada</h3><span class="costo">Costo: bajo</span></div>
+      <p>Entre 15.000 y 20.000 vehículos pasan frente a la propiedad cada día. Un letrero sobrio ("Oportunidad de inversión · Se busca socio") con un código QR, un cuadrado que se escanea con la cámara del celular y abre el sitio, es la forma más barata de llegar a muchas personas de la zona. Como el sitio aclara que el negocio sigue operando, no debería inquietar a los clientes de eventos.</p>
+    </div>
+  </div>
+  <div class="canal">
+    <span class="num">3</span>
+    <div>
+      <div class="cab"><h3>Un corredor de propiedades</h3><span class="costo">Costo: solo si se vende</span></div>
+      <p>Los corredores tienen listas de compradores. La oficina de Engel &amp; Völkers en Calera de Tango ya ofrece propiedades para centros de eventos a inversionistas: vale la pena una conversación. Los corredores cobran solo si se concreta la venta.</p>
+    </div>
+  </div>
+  <div class="canal">
+    <span class="num">4</span>
+    <div>
+      <div class="cab"><h3>Contacto directo con compradores naturales</h3><span class="costo">Costo: tiempo</span></div>
+      <p>Banqueteras (dejarían de arrendar locales), otros centros de eventos de Lonquén, Padre Hurtado y Talagante, organizadores de matrimonios y grupos gastronómicos. Entre 30 y 50 mensajes personales, con el paquete informativo adjunto, suelen dar mejores resultados que cualquier aviso.</p>
+    </div>
+  </div>
+  <div class="canal">
+    <span class="num">5</span>
+    <div>
+      <div class="cab"><h3>Avisos pagados en Google</h3><span class="costo">Costo: medio</span></div>
+      <p>Aparecer cuando alguien busca "centro de eventos en venta" o "negocio en venta Santiago". Son pocas búsquedas, pero de personas que buscan exactamente esto. Se recomienda una prueba de uno o dos meses con un presupuesto pequeño.</p>
+    </div>
+  </div>
+  <div class="canal">
+    <span class="num">6</span>
+    <div>
+      <div class="cab"><h3>Saber qué aviso funciona</h3><span class="costo">Costo: ninguno</span></div>
+      <p>Cada aviso puede llevar su propio enlace, para saber cuál trae a las personas que descargan el paquete o escriben. Así se invierte más en lo que funciona. El sitio ya registra cada descarga del paquete.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── Ajustes a la presentación ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">Presentación</span>
+  <h2>Ajustes recomendados</h2>
+  <p class="intro">Son ajustes pequeños que aumentan la confianza de un comprador cuidadoso.</p>
+
+  <ol class="ajustes">
+    <li><div><h3>Mostrar ventas reales</h3><p>Agregar los totales de ventas y el número de eventos de los últimos 2 o 3 años junto a la proyección 2027, e indicar cuánto vende hoy el Patio de Comidas. El detalle puede quedar para después de firmar la carta de confidencialidad.</p></div></li>
+    <li><div><h3>Destacar lo que más vende</h3><p>El precio efectivo cercano a UF 21.000, el rendimiento cercano a 32% sobre la entrada y el negocio en marcha. Apoyarse menos en el valor del terreno por m², que el comprador comparará con otras propiedades de la zona.</p></div></li>
+    <li><div><h3>Precisar la rentabilidad</h3><p>Indicar que el 15,8% es antes de impuestos. Cambiar "a todo evento" por "estimada": el abogado de un comprador puede leerlo como una garantía, y el mismo sitio aclara que las cifras son proyecciones.</p></div></li>
+    <li><div><h3>Explicar la sociedad</h3><p>Quién es el otro 50%, qué rol tendría el nuevo socio y cómo funciona la opción de compra o venta. Esa opción es una fortaleza: da una salida clara a ambas partes.</p></div></li>
+    <li><div><h3>Anticipar la pregunta de la recepción final</h3><p>Tener una respuesta breve y por escrito sobre la recepción final habitacional, la patente de alcoholes y los permisos sanitarios.</p></div></li>
+    <li><div><h3>Ofrecer también la compra del 100%</h3><p>El sitio habla de "socio o comprador", pero todas las condiciones son para el 50%. Una línea con las condiciones para el 100% abre la puerta a más compradores.</p></div></li>
+    <li><div><h3>Mantener las cifras estables</h3><p>En el último año la rentabilidad publicada cambió varias veces. Mantenerla estable desde ahora transmite seriedad.</p></div></li>
+  </ol>
+</section>
+
+<!-- ─────────────────────────── Decisiones ─────────────────────────── -->
+<section class="seccion">
+  <span class="eyebrow">Para la reunión</span>
+  <h2>Decisiones para conversar en equipo</h2>
+  <p class="intro">Una lista para definir qué se hace, quién lo hace y para cuándo.</p>
+
+  <table class="decisiones">
+    <thead><tr><th>Decisión</th><th>Recomendación</th><th>Responsable</th><th>Fecha</th></tr></thead>
+    <tbody>
+      <tr><td>¿Publicamos en Portal Inmobiliario y Yapo.cl?</td><td class="reco">Sí</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Instalamos un letrero en la entrada?</td><td class="reco">Sí, sobrio y con código QR</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Conversamos con un corredor?</td><td class="reco">Sí, partiendo por Engel &amp; Völkers Calera de Tango</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Quién arma la lista de 30 a 50 contactos directos?</td><td class="reco">Definir una persona</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Mostramos ventas reales de los últimos años?</td><td class="reco">Sí, al menos los totales anuales</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Ofrecemos también la compra del 100%?</td><td class="reco">Definir condiciones</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Probamos avisos en Google por 1 o 2 meses?</td><td class="reco">Sí, con presupuesto pequeño</td><td class="blanco"></td><td class="blanco"></td></tr>
+      <tr><td>¿Hacemos los ajustes de la página anterior?</td><td class="reco">Sí</td><td class="blanco"></td><td class="blanco"></td></tr>
+    </tbody>
+  </table>
+
+  <p class="cierre">Las Secoyas ya tiene lo más difícil: un negocio con historia, reputación y una propiedad que lo respalda. Lo que falta es que la oportunidad llegue a las personas correctas.</p>
+
+  <div class="notas">
+    <p>Este análisis se basa en el sitio web inmejorableinversiongastronomica.com y en el paquete informativo de agosto de 2026. Los cálculos son aproximados y no reemplazan una asesoría legal o tributaria ni una tasación profesional.</p>
+    <p>Fuentes externas consultadas en octubre de 2026: Portal Inmobiliario (portalinmobiliario.com), Yapo.cl (sección de negocios en venta) y el aviso "¡Proyecto Inversionistas!, Especial para Centro de Eventos" de Engel &amp; Völkers Calera de Tango (engelvoelkers.com).</p>
+  </div>
+</section>
+
+</body>
+</html>
