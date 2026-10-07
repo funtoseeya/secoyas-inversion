@@ -10497,6 +10497,31 @@ body { overflow-x: hidden; }
   font-size: 0.82rem;
 }
 
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  color: #ddd;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.footer-social a:hover {
+  background: var(--gold);
+  color: #081510;
+}
+
 .footer-heading {
   color: #fff;
   font-weight: 700;

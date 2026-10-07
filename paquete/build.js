@@ -408,6 +408,8 @@ function paginaContacto() {
       <li><span>Tel. / WhatsApp</span><a href="https://wa.me/${k.whatsapp}">${esc(k.telefono)}</a></li>
       <li><span>Email</span><a href="mailto:${esc(k.email)}">${esc(k.email)}</a></li>
       <li><span>Web</span><a href="https://${esc(k.web)}/">${esc(k.web)}</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/${esc(k.instagram)}/">@${esc(k.instagram)}</a></li>
+      <li><span>Facebook</span><a href="https://www.facebook.com/${esc(k.facebook)}/">facebook.com/${esc(k.facebook)}</a></li>
       <li><span>Dirección</span>${esc(k.direccion)}</li>
     </ul>
     <p class="descargo">Las cifras presentadas son proyecciones basadas en el historial operativo del negocio y no constituyen una garantía de resultados futuros. Toda inversión conlleva riesgos inherentes. ${esc(d.fecha)}.</p>
